@@ -1,0 +1,37 @@
+@use "sass:math";
+$rootUnit: 16px !default;
+
+@function removeUnit($value) {
+  // @return ($value / ($value * 0 + 1));
+  @return math.div($value, $value * 0 + 1);
+}
+
+@function rem($value, $base: $rootUnit) {
+  @return (removeUnit(math.div($value, $base))) * 1rem;
+}
+
+@mixin flexbox($justify, $align) {
+  justify-content: $justify;
+  align-items: $align;
+}
+
+div {
+  @include flexbox(center, left);
+}
+
+.main {
+  &-view {
+    width: 300px;
+  }
+  a {
+    width: calc(100px - 3rem);
+  }
+  &::after {
+    content: "";
+    width: rem(22px);
+    font-weight: 700;
+  }
+  &:hover {
+    color: green;
+  }
+}

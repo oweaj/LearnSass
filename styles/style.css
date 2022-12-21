@@ -1,0 +1,28 @@
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+  background-color: aqua;
+  font-weight: 600;
+}
+
+div {
+  justify-content: center;
+  align-items: left;
+}
+
+.main-view {
+  width: 300px;
+}
+.main a {
+  width: calc(100px - 3rem);
+}
+.main::after {
+  content: "";
+  width: 1.375rem;
+  font-weight: 700;
+}
+.main:hover {
+  color: green;
+}
+
+/*# sourceMappingURL=style.css.map */
